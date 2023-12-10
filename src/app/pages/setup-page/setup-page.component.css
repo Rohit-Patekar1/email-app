@@ -1,0 +1,311 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif; /* Ideally, you would use a custom font here */
+}
+
+body {
+  background-color: #f4f7fa; /* Adjusted the body background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Wallet App Styling */
+.email-app {
+  width: 100%;
+  max-width: 350px; /* Adjusted the max-width */
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* More pronounced shadow */
+  overflow: hidden; /* Ensures the border-radius clips the content */
+  padding: 20px;
+  height: 500px;
+}
+
+/* Header */
+.header {
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.header h2 {
+  font-size: 26px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Balance Info */
+.total-email {
+  background: linear-gradient(to right, #8456EC, #E87BF8); /* Gradient background */
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Adjust space between sections */
+  text-align: center;
+  position: relative; /* For pseudo-element positioning */
+}
+
+.total-email:before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px; /* Small circle notch */
+}
+
+.total-email span {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.total-email small {
+  font-size: 14px;
+}
+
+.ct{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Navigation Buttons */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.nav-btn {
+  background: #EDF1F7; /* Lighter background for buttons */
+  border: none;
+  padding: 10px;
+  flex: 1;
+  border-radius: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+.nav-btn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.nav-btn:hover {
+  background: #E2E6EE;
+}
+
+/* Transactions */
+.transactions h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.transactions {
+  background-color: #ffffff; /* Optional: set a background if it's not already white */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Slight shadow for depth */
+  padding: 15px; /* Padding inside the transactions list */
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  padding: 10px 0; /* Adjust padding for each item */
+  border-bottom: 1px solid #eee; /* Subtle border for separation */
+  font-size: 14px;
+}
+
+.transaction-item:last-child {
+  border-bottom: none; /* Remove bottom border from last item */
+}
+
+.transaction-item span {
+  color: #333; /* Primary text color */
+}
+
+.transaction-item span:first-child {
+  font-weight: bold; /* Make the transaction name bold */
+}
+
+
+.see-all {
+  font-size: 14px;
+  color: #5073B8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Make sure the 'See All' button aligns with the title */
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.transaction-header h3 {
+  font-weight: bold;
+}
+
+/* See All Button */
+.see-all {
+  display: inline-block; /* Allows the padding and margin to affect inline elements */
+  font-size: 14px;
+  color: #5073B8; /* Adjust color if needed */
+  padding: 5px 10px; /* Add padding for better touch target */
+  margin-left: 10px; /* Space from the header */
+  text-decoration: none; /* Remove underline */
+  border-radius: 15px; /* Rounded corners */
+  transition: background-color 0.2s, color 0.2s; /* Smooth transition for hover effect */
+  font-weight: bold; /* Make it bold to stand out */
+}
+
+.see-all:hover {
+  background-color: #5073B8; /* Darker background on hover */
+  color: #ffffff; /* White text on hover */
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Send Button Style */
+.send-btn {
+  background: #8456EC; /* Primary color */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  margin-right: 25px;
+}
+
+.send-btn:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dropdown Menu Style */
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 50px; /* Adjust as per your layout */
+  left: 0;
+  right: 0;
+  margin: 0 auto; /* Centering the dropdown */
+  width: 90%; /* Or width as per design requirement */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 1000; /* To be on top of other elements */
+}
+
+/* Input Fields Style */
+.dropdown-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0; /* Light grey border */
+  box-sizing: border-box;
+}
+
+/* Action Buttons inside Dropdown */
+.dropdown-action-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  /* margin: 20px; */
+}
+
+.send-action-btn {
+  background: #22C55E; /* Success color for send action */
+  color: white;
+}
+
+.cancel-action-btn {
+  background-color: #f44336;
+  color: #64748B; /* Grey color */
+}
+
+/* Show Dropdown */
+.show-dropdown {
+  display: block;
+}
+
+.send-container {
+  position: relative; /* Set the position context for the absolute positioning of the dropdown */
+}
+
+
+#sendDropdown {
+  position: absolute;
+  top: 100%; /* Position it right below the send button */
+  left: 0;
+  right: 0;
+  background-color: white; /* Match the background to your design */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Optional: Add shadow to match your design */
+  padding: 10px;
+  z-index: 1000; /* Ensure it's above other content */
+  width: 300px;
+}
+
+
+h1 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+h2{
+  margin-bottom: 15px;
+}
+
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  color: #666;
+}
+
+input {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+

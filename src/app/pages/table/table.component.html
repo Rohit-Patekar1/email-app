@@ -1,0 +1,34 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="transaction-table-container">
+  <h2>Transaction History</h2>
+<button class="btn" (click)="goBack()">Go Back</button>
+<button class="btn" (click)="downloadCSV()">Download CSV</button>
+  <table class="transaction-table">
+    <thead>
+      <tr>
+        <th>Email </th>
+        <th>Name</th>
+        <th>Year Of Birth</th>
+        <th>Email Sent On </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of transactionsData">
+      <td>{{item.email }}</td>
+      <td>{{item.name }}</td>
+      <td>{{item.yearOfBirth ? item.yearOfBirth :'N/A'}}</td>
+      <td>{{item.timestamp | date: 'yyyy-MM-dd' }}</td>
+    </tbody>
+  </table>
+
+  <div class="transaction-history-footer">
+    <div class="pagination-info">
+      <span>Page <strong id="currentPage">{{pageCount}}</strong> of <strong id="totalPages">{{totalPages}}</strong></span>
+    </div>
+
+    <div class="pagination-controls">
+      <button class="page-button" (click)="previous()">Previous</button>
+      <button class="page-button" (click)="next()">Next</button>
+    </div>
+  </div>
+
+</div>

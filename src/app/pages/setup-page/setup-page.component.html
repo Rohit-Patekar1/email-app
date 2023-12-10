@@ -1,0 +1,36 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<body >
+  <div class="email-app">
+    <h2 class="">Your one stop to send emails!</h2>
+    <div class="balance-info">
+      <div class="total-email">
+        <span>{{totalEmailSent}}</span>
+        <span> Emails sent so far</span>
+      </div>
+    </div>
+    <div class="navigation">
+      <div class="send-container">
+        <button class="send-btn" (click)="toggleDropdown()">Send Emails</button>
+        <button class="send-btn" (click)="viewTemplate()">View Template</button>
+        <div *ngIf="showTemplate2" id="sendDropdown">
+          <label for="csvFile">Upload CSV containing user emails:</label>
+          <input id="csvFile" type="file" (change)="onFileSelected($event)" accept=".csv">
+          <button class="dropdown-action-btn send-action-btn"
+            (click)="toggleDropdown(); sendEmails()">Send</button>
+
+          <button class="dropdown-action-btn cancel-action-btn" (click)="toggleDropdown()">Cancel</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="transactions ct">
+      <h3> To view email sent click here</h3>
+      <p>⬇️</p>
+      <button class="see-all" (click)="fetchTransaction()">click here</button>
+    </div>
+  </div>
+</body>
+
+
+

@@ -1,0 +1,32 @@
+.btn {
+  background-color: #4CAF50; /* A shade of green that should be visible but not distracting */
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s; /* Smooth transition for hover effect */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Slight shadow for depth */
+  margin-left: 50px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #4CAF50;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* You can also add :focus and :active pseudo-classes for accessibility */
+.btn:focus,
+.btn:active {
+  outline: none;
+  border: none;
+  position: relative;
+  top: 1px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
